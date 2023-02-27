@@ -2,7 +2,7 @@
 
 module.exports = {
   ORO: {
-    id_nivel: 'ORO',
-    descripción: 'Nivel Oro - Mercadopuntos',
+    level_id: 'ORO',
+    description: 'Nivel Oro - Mercadopuntos',
   },
 };

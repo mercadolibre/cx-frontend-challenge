@@ -3,8 +3,8 @@
 module.exports = {
   1: [
     {
-      tipo: 'warning',
-      mensaje: 'Tu cuenta no ha sido verificada aún. Revisa tu mail',
+      type: 'warning',
+      message: 'Tu cuenta no ha sido verificada aún. Revisa tu mail',
     },
   ],
 };

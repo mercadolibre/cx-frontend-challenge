@@ -2,43 +2,43 @@
 
 module.exports = {
   7010191: {
-    id_transaccion: 7010191,
-    estado: 'realizada',
+    transaction_id: 7010191,
+    status: 'completed',
   },
   7010192: {
-    id_transaccion: 7010192,
-    estado: 'rechazada',
+    transaction_id: 7010192,
+    status: 'rejected',
   },
   7010193: {
-    id_transaccion: 7010193,
-    estado: 'rechazada',
+    transaction_id: 7010193,
+    status: 'rejected',
   },
   7010194: {
-    id_transaccion: 7010194,
-    estado: 'realizada',
+    transaction_id: 7010194,
+    status: 'completed',
   },
   7010195: {
-    id_transaccion: 7010195,
-    estado: 'cancelada',
+    transaction_id: 7010195,
+    status: 'cancelled',
   },
   7010196: {
-    id_transaccion: 7010196,
-    estado: 'realizada',
+    transaction_id: 7010196,
+    status: 'completed',
   },
   7010197: {
-    id_transaccion: 7010197,
-    estado: 'realizada',
+    transaction_id: 7010197,
+    status: 'completed',
   },
   7010198: {
-    id_transaccion: 7010198,
-    estado: 'realizada',
+    transaction_id: 7010198,
+    status: 'completed',
   },
   7010199: {
-    id_transaccion: 7010199,
-    estado: 'cancelada',
+    transaction_id: 7010199,
+    status: 'cancelled',
   },
   7010200: {
-    id_transaccion: 7010200,
-    estado: 'rechazada',
+    transaction_id: 7010200,
+    status: 'rejected',
   },
 };
