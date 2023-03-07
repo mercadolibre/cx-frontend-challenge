@@ -32,7 +32,7 @@ El frontend debe tener una ruta **/profile** en la cuál se podrá visualizar in
 
 ## Backend
 
-El backend debe tener los endpoints necesarios para servir la información que necesita el frontend. Los endpoints quedan a libre definición, pero debes usar el servicio llamado **`MercadolibreService`** que se encuentra en este repositorio, el cuál expone los distintos mocks de información que vas a necesitar. No modifiques los archivos que te entregamos, solamente úsalos en tu solución.
+El backend debe tener los endpoints necesarios para servir la información que necesita el frontend. Los endpoints quedan a libre definición, pero debes usar el servicio llamado **`MercadolibreService`** que se encuentra en este repositorio, el cual expone los distintos mocks de información que vas a necesitar. No modifiques los archivos que te entregamos, solamente úsalos en tu solución.
 
 - **MercadolibreService**
   - getUser
