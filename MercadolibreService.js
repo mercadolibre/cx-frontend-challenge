@@ -3,7 +3,7 @@
 /**
  * - Todos estos métodos son asíncronos.
  * - Te recomendamos no modificar estos archivos ya que usaremos una copia para validar el funcionamiento
- * - Si tenés algún problema o pregunta, no dudes en contactar al entrevistador!
+ * - Si tienes algún problema o pregunta, no dudes en contactar al entrevistador!
  */
 
 const MockUtils = require('./mocks');
