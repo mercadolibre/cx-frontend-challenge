@@ -4,9 +4,10 @@ Este challenge consiste en **dos partes**, una de frontend y otra de backend. Da
 
 ## Entregable
 Este repositorio es un [Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), esperamos que lo uses como template para crear tu proyecto, que será el que nos enviarás cuando finalices el challenge con las siguientes condiciones:
-- Tu usuario debe ser el owner
+- Tu usuario debe ser el **owner**
+- Si no te especificaron una rama, deberás usar los archivos que están en `master`
 - El repositorio debe tener visibilidad `privada`
-- Una vez que finalices el challenge y lo envíes, te enviaremos los usuarios que van a revisar tu entregable para que los agregues
+- Una vez que finalices y nos compartas el challenge, te enviaremos los usuarios que van a revisar tu entregable para que los agregues
 
 ## Tecnologías
 
