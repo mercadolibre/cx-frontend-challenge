@@ -2,6 +2,12 @@
 
 Este challenge consiste en **dos partes**, una de frontend y otra de backend. Dado que solemos trabajar en ambos mundos, te pedimos que lo tengas en cuenta a la hora de diseñar y desarrollar las distintas capas del proyecto.
 
+## Entregable
+Este repositorio es un [Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), esperamos que lo uses como template para crear tu proyecto, que será el que nos enviarás cuando finalices el challenge con las siguientes condiciones:
+- Tu usuario debe ser el owner
+- El repositorio debe tener visibilidad `privada`
+- Una vez que finalices el challenge y lo envíes, te enviaremos los usuarios que van a revisar tu entregable para que los agregues
+
 ## Tecnologías
 
 Solemos usar React para nuestros frontends y NodeJS para nuestros backends (con Express), pero siéntete libre de hacerlo en otra tecnología de **Javascript** si así lo prefieres.
