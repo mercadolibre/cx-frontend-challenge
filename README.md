@@ -1,83 +1,205 @@
-# Challenge técnico Mercadolibre
+# Meli Challenge
 
-Este challenge consiste en **dos partes**, una de frontend y otra de backend. Dado que solemos trabajar en ambos mundos, te pedimos que lo tengas en cuenta a la hora de diseñar y desarrollar las distintas capas del proyecto.
+Hola,
+Ante todo, gracias por tu tiempo. A continuación te contaremos de que se trata el desafio.
+Tu objetivo es crear un buscador de productos de Mercado Libre. Dentro del directorio `app`, encontrarás un proyecto en [Next.js](https://nextjs.org/), donde tendrás que desarrollar tu solución. El ejercicio envuelve una serie de iteraciones; intenta completar cada interación antes de leer la próxima.
 
-## Entregable
-Este repositorio es un [Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), esperamos que lo uses como template para crear tu proyecto, que será el que nos enviarás cuando finalices el challenge con las siguientes condiciones:
-- Tu usuario debe ser el **owner**
-- Si no te especificaron una rama, deberás usar los archivos que están en `master`
-- El repositorio debe tener visibilidad `privada`
-- Una vez que finalices y nos compartas el challenge, te enviaremos los usuarios que van a revisar tu entregable para que los agregues
+Requerimientos técnicos
 
-## Tecnologías
+- El proyecto debe ser desarrollado en tu cuenta personal de github. Cuando finalices, compartenos el link del repositorio y recuerda dar acceso a los entrevistadores.
+- El proyecto debe ser reponsive para los siguientes tamaños de pantalla 320, 768, 1280px.
+- Crear un store global utilizando [context api](https://reactjs.org/docs/context.html). El mismo debe controlar el listado de productos.
+- Crear Unit Tests donde sea necesario, concéntrate en las funciones de desafío.
+- Usar Typescript.
 
-Solemos usar React para nuestros frontends y NodeJS para nuestros backends (con Express), pero siéntete libre de hacerlo en otra tecnología de **Javascript** si así lo prefieres.
+Vamos a prestar atención sobre todo a los siguientes puntos:
+- Diseño orientado a objetos.
+- Diseño testeable.
+- Arquitectura modular.
+- Código legible y que revele su intención.
+- Extensibilidad.
+- Principios SOLID aplicados de manera criteriosa.
+- Atención a los detalles.
 
-## Frontend
+Cosas que pueden ayudar a tu proyecto pero no son obligatorias:
+- Commit semántico con o sin una herramienta o libraria.
+- Aplicacion de Server Side Render.
+- Accesibilidad de los componentes.
+- HTML semantic.
+- Patrones CSS.
+- Seo.
+- Integration Tests.
 
-El frontend debe tener una ruta **/profile** en la cuál se podrá visualizar información general del usuario, un listado de sus compras, y se podrá acceder al detalle de cada una de estas.
 
-- **Información general**
-  - Nombre completo del usuario
-  - Imagen del perfil
-  - Nivel de Mercado Puntos
-  - Restricciones
-- **Mis compras**
-  - Listado de compras, con id de compra, título del ítem, precio, cantidad y fecha de compra, y una forma para ver el detalle de esa compra
-  - Paginado
-- **Detalle de compra**
-  - Forma para volver al listado de compras
-  - Vendedor
-  - Id de la compra
-  - Título del ítem
-  - Imagen del ítem
-  - Fecha de compra
-  - Precio
-  - Cantidad
-  - Estado del pago
-  - Estado del envío
 
-## Backend
+Comencemos...
 
-El backend debe tener los endpoints necesarios para servir la información que necesita el frontend. Los endpoints quedan a libre definición, pero debes usar el servicio llamado **`MercadolibreService`** que se encuentra en este repositorio, el cual expone los distintos mocks de información que vas a necesitar. No modifiques los archivos que te entregamos, solamente úsalos en tu solución.
+---
 
-- **MercadolibreService**
-  - getUser
-  - getUserRestrictions
-  - getUserPurchases
-  - getLevel
-  - getShipment
-  - getPayment
+&nbsp;
 
-## Puntos de evaluación
+## Iteración 1: Agregar la funcionalidad buscador de productos
+### Feature: Buscador de productos
 
-Para este challenge nos interesa ver cómo aplicas todos tus conocimientos en torno a:
+    Como usuario de Mercado Libre
+    Quiero buscar productos en base a una palabra o parte de ella
+    Para poder comparar y elegir el producto que más me convenga
 
-- **Funcionalidad**
-- **Buenas prácticas de código**
-- **Formato de código**
-  - Handling de errores.
-  - Uso de estructuras de datos.
-  - Tests.
-  - Dependencias.
-  - Uso de las herramientas (como React, Express, CSS / Sass, etc).
-- **Estructura del proyecto**
-- **Escalabilidad**
+    Scenario: Un usuario anonimo busca un producto en Mercado Libre
+        Dado un usuario anonimo
+        Cuando ingresa un texto en el buscador
+        Entonces el sistema retorna una lista de productos que contengan el texto, o parte de él, en el título
 
-Nos interesan soluciones simples, técnicamente correctas, mantenibles y escalables. Es importante entender el alcance del proyecto y usar las herramientas adecuadas para resolver la consigna dada.
+&nbsp;
 
-Ten en cuenta que necesitamos instrucciones para levantar el proyecto, las mismas son ***indispensables*** para poder revisar y corregir tu aplicación. Esto incluye tanto los comandos a ejecutar como también el entorno de desarrollo que debemos tener (toda la información que consideres relevante sobre el stack requerido).
+### Diseño
 
-> **Cuidado!**
->
-> Sin esta información, podríamos decidir ***no continuar*** con la revisión del challenge.
+![product_list](./resources/product_list.jpg)
 
-### Tips para Frontend
+&nbsp;
 
-- El diseño queda a libre interpretación, puedes diseñar lo que creas conveniente.
-- La información listada para cada sección es la requerida, no es necesario mostrar otras adicionales.
+### Especificaciones técnicas:
 
-### Tips para Backend
+- Para construir el componente de resultado de búsqueda, deberás consumir el siguiente servicio: https://api.mercadolibre.com/sites/MLA/search?q={TEXT_TO_SEARCH}&limit=10.
+- El componente deberá cumplir con el siguiente contrato:
+```javascript
+Interface Product {
+    id: string;
+    title: string;
+    price: {
+        currency: string;
+        amount: string;
+        decimals: number;
+    };
+    installments: {
+        quantity: number;
+        amount: string;
+    };
+    address: {
+        state_name: string;
+        city_name: string;
+    };
+    picture: string;
+    condition: string;
+    free_shipping: boolean;
+}
+```
 
-- Toda la información que necesitas para las pantallas del frontend la puedes encontrar usando el servicio que proveemos. Si no es así, envíanos un mensaje cuanto antes!
+---
+
+&nbsp;
+
+## Iteración 2: Agregar funcionalidad ordenado de productos
+Feature: Ordenar productos
+
+    Como usuario de Mercado Libre
+    Quiero ordenar el resultado de búsqueda en base a un criterio
+    Para poder comparar y elegir el producto que más me convenga
+
+    Scenario: Un usuario anonimo ordena el resultado de búsqueda en Mercado Libre
+        Dado un usuario anonimo
+        Cuando selecciona un criterio de ordenamiento
+        Entonces el sistema retorna una lista de productos ordenado por el criterio seleccionado
+
+&nbsp;
+
+### Diseño
+
+(Ubica el componente donde consideres adecuado para la lectura y experiencia del usuario. Ten en cuenta el orden de los componentes y el comportamiento responsivo)
+
+![sort_component](./resources/sort_component.png)
+
+&nbsp;
+
+### Especificaciones técnicas:
+- Para construir el componente de ordenamiento, deberás consultar el atributo `available_sorts` en la respuesta de la API. El mismo retorna los posibles parametros de ordemamiento.
+
+```javascript
+ "available_sorts": [
+    {
+      "id": "relevance",
+      "name": "Más relevantes"
+    },
+    {
+      "id": "price_desc",
+      "name": "Mayor precio"
+    }
+],
+```
+
+- Para aplicar un ordemiento a la búsqueda de productos, deberás agregar el paramentro `sort={SORT_ID}` a la url, ej: https://api.mercadolibre.com/sites/MLA/search?q={TEXT_TO_SEARCH}&sort=price_desc&limit=10
+
+
+---
+
+&nbsp;
+
+## Iteración 3: Agregar funcionalidad filtro de precio
+Feature: Fitrar búsqueda por precio
+
+    Como usuario de Mercado Libre
+    Quiero filtrar el resultado de búsqueda por un rango de precio
+    Para poder comparar y elegir el producto que más me convenga
+
+    Scenario: Un usuario anonimo aplica un filtro de precio al resultado de búsqueda en Mercado Libre
+        Dado un usuario anonimo
+        Cuando aplica el filtro de búsqueda
+        Entonces el sistema retorna una lista de productos filtrados por el rango de precio seleccionado
+
+&nbsp;
+
+### Diseño
+
+(Ubica el componente donde consideres adecuado para la lectura y experiencia del usuario. Ten en cuenta el orden de los componentes y el comportamiento responsivo)
+
+![price_component](./resources/price_component.png)
+
+&nbsp;
+
+### Especificaciones técnicas:
+- Para construir el componente de filtro de precio, deberás consultar el atributo `available_filters` en la respuesta de la API. El mismo retorna un listado de filtros; dentro de él encontrarás un objeto con los parametros de filtro de precio.
+
+```javascript
+"available_filters": [
+    {},
+    {},
+    {
+      "id": "price",
+      "name": "Precio",
+      "type": "range",
+      "values": [
+        {
+          "id": "*-3000.0",
+          "name": "Hasta $ 3.000",
+          "results": 639
+        },
+        {
+          "id": "3000.0-9500.0",
+          "name": "$3.000 a $9.500",
+          "results": 669
+        },
+        {
+          "id": "9500.0-40000.0",
+          "name": "$9.500 a $40.000",
+          "results": 687
+        }
+      ]
+    },
+    ...
+]
+```
+- Para aplicar un filtro a la búsqueda de productos, deberás agregar el paramentro `{FILTER_ID}={VALUE_ID}` a la url, ej: https://api.mercadolibre.com/sites/MLA/search?q={TEXT_TO_SEARCH}&sort={SORT_ID}&price=3000.0-9500.0&limit=10.
+También puedes agregar un rango numérico personalizado. Para ello debes agregar los valores separados por "-" y sin separador de miles ej: `price=1000.0-1030.0`
+
+
+
+---
+
+&nbsp;
+
+## Iteración 4: Mejorar el control de estado
+Improvement: Es necesario migrar el control de estado de **CONTEXT-API** a [**REDUX TOOLKIT**](https://redux-toolkit.js.org/)
+
+
+
 
