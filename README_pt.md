@@ -1,6 +1,6 @@
-# Meli Challenge ([Versão PT](./README_pt.md))
+# Meli Challenge ([Versión ES](./README.md))
 
-Hola,
+Ola,
 Ante todo, gracias por tu tiempo. A continuación te contaremos de que se trata el desafio.
 Tu objetivo es crear un buscador de productos de Mercado Libre. Dentro del directorio `app`, encontrarás un proyecto en [Next.js](https://nextjs.org/), donde tendrás que desarrollar tu solución. El ejercicio envuelve una serie de iteraciones; intenta completar cada interación antes de leer la próxima.
 
