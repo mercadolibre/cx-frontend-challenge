@@ -4,11 +4,19 @@ Hola,
 Ante todo, gracias por tu tiempo. A continuación te contaremos de que se trata el desafio.
 Tu objetivo es crear un buscador de productos de Mercado Libre. Dentro del directorio `app`, encontrarás un proyecto en [Next.js](https://nextjs.org/), donde tendrás que desarrollar tu solución. El ejercicio envuelve una serie de iteraciones; intenta completar cada interación antes de leer la próxima.
 
+&nbsp;
+
+Entregable
+
+Este repositorio es un [Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), y debes crear tu proyecto en base a este template. Ten en cuenta los siguientes puntos:
+- Tu usuario debe ser el **owner**
+- Si no te especificaron una rama, deberás usar los archivos que están en `master`
+- El repositorio debe tener visibilidad `privada`
+- Una vez que finalices y nos compartas el challenge, te enviaremos los usuarios que van a revisar tu entregable para que los agregues
+
 Requerimientos técnicos
 
-- El proyecto debe ser desarrollado en tu cuenta personal de github. Cuando finalices, compartenos el link del repositorio y recuerda dar acceso a los entrevistadores.
-- El proyecto debe ser reponsive para los siguientes tamaños de pantalla 320, 768, 1280px.
-- Crear un store global utilizando [context api](https://reactjs.org/docs/context.html). El mismo debe controlar el listado de productos.
+- El proyecto debe ser reponsive para los siguientes tamaños del pantalla 320, 768, 1280px.
 - Crear Unit Tests donde sea necesario, concéntrate en las funciones de desafío.
 - Usar Typescript.
 
@@ -59,7 +67,7 @@ Comencemos...
 &nbsp;
 
 ### Especificaciones técnicas:
-
+- Crear un store global utilizando [context api](https://reactjs.org/docs/context.html). El mismo debe controlar el listado de productos.
 - Para construir el componente de resultado de búsqueda, deberás consumir el siguiente servicio: https://api.mercadolibre.com/sites/MLA/search?q={TEXT_TO_SEARCH}&limit=10.
 - El componente deberá cumplir con el siguiente contrato:
 ```javascript
