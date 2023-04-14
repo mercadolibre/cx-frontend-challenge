@@ -6,7 +6,7 @@ Tu objetivo es crear un buscador de productos de Mercado Libre. Dentro del direc
 
 &nbsp;
 
-Entregable
+### Entregable
 
 Este repositorio es un [Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), y debes crear tu proyecto en base a este template. Ten en cuenta los siguientes puntos:
 - Tu usuario debe ser el **owner**
@@ -14,7 +14,7 @@ Este repositorio es un [Template Repository](https://docs.github.com/en/reposito
 - El repositorio debe tener visibilidad `privada`
 - Una vez que finalices y nos compartas el challenge, te enviaremos los usuarios que van a revisar tu entregable para que los agregues
 
-Requerimientos técnicos
+### Requerimientos técnicos
 
 - El proyecto debe ser reponsive para los siguientes tamaños del pantalla 320, 768, 1280px.
 - Crear Unit Tests donde sea necesario, concéntrate en las funciones de desafío.
@@ -29,7 +29,7 @@ Vamos a prestar atención sobre todo a los siguientes puntos:
 - Principios SOLID aplicados de manera criteriosa.
 - Atención a los detalles.
 
-Cosas que pueden ayudar a tu proyecto pero no son obligatorias:
+Cosas que pueden ayudar a tu proyecto pero **no son obligatorias**:
 - Commit semántico con o sin una herramienta o libraria.
 - Aplicacion de Server Side Render.
 - Accesibilidad de los componentes.
@@ -197,7 +197,8 @@ Feature: Fitrar búsqueda por precio
 ]
 ```
 - Para aplicar un filtro a la búsqueda de productos, deberás agregar el paramentro `{FILTER_ID}={VALUE_ID}` a la url, ej: https://api.mercadolibre.com/sites/MLA/search?q={TEXT_TO_SEARCH}&sort={SORT_ID}&price=3000.0-9500.0&limit=10.
-También puedes agregar un rango numérico personalizado. Para ello debes agregar los valores separados por "-" y sin separador de miles ej: `price=1000.0-1030.0`
+
+- También puedes agregar un rango numérico personalizado. Para ello debes agregar los valores separados por "-" y sin separador de miles ej: `price=1000.0-1030.0`
 
 
 
