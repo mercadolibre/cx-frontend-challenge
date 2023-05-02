@@ -11,6 +11,9 @@ const config = {
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
   },
+  collectCoverage: true,
+  coverageReporters: ["lcov", "json", "html", "text", "text-summary"],
+  collectCoverageFrom: ["<rootDir>/**/*.ts", "<rootDir>/**/*.tsx"],
 };
 
 export default createJestConfig(config);
