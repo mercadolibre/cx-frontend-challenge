@@ -10,7 +10,8 @@ Tu objetivo es crear un buscador de productos de Mercado Libre. Dentro del direc
 
 Este repositorio es un [Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), y debes crear tu proyecto en base a este template. Ten en cuenta los siguientes puntos:
 - Tu usuario debe ser el **owner**
-- Si no te especificaron una rama, deberás usar los archivos que están en `master`
+- Cuando uses el template, selecciona la opción `Include all branches` para descargar todos los branches del repo
+- Una vez creado el repo privado desde el templace, deberás usar los archivos que están en la rama `cx-challenge-v2`
 - El repositorio debe tener visibilidad `privada`
 - Una vez que finalices y nos compartas el challenge, te enviaremos los usuarios que van a revisar tu entregable para que los agregues
 
